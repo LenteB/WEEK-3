@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple Map</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+    #map {
+      height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 52.370216, lng: 4.895168 },
+        zoom: 8
+      });
+    }
+
+/*
+function initMap() {
+    const Amstelveen = { lat: 52.305690, lng: 4.862510};
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: Amstelveen});
+  var marker = new google.maps.Marker({position: Amstelveen, map: map});
+}*/
+const studentCoordinates = [
+     {stad: "Mijnsherenland", lat: 51.799010, lng: 4.486300 },
+     {stad: "Amstelveen", lat: 52.305690, lng: 4.862510},
+    {stad: "Amsterdam", lat: 52.373169, lng: 4.890660 },
+    {stad: "Weesp",  lat: 52.307330, lng: 5.042610 },
+    {stad: "Nijmegen",  lat: 51.841690, lng: 5.858650},
+     {stad: "Hoogeveen",  lat: 52.726120, lng: 6.479580 },
+    {stad: "Lelystad", lat: 52.510010, lng: 5.477640 },
+    {stad: "Spijkenisse", lat: 51.850460, lng: 4.325670},
+    {stad: "Overveen", lat: 52.391690, lng: 4.611600},
+]
+
+function initMap() {
+  for (i = 0; i < studentCoordinates.length; i++){
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: array.length});
+  var marker = new google.maps.Marker({position: array.length, map: map});
+
+initMap();
+
+
+/*
+  var Mijnsherenland = { lat: 51.799010, lng: 4.486300 };
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: Mijnsherenland});
+  var marker = new google.maps.Marker({position: Mijnsherenland, map: map});
+}
+
+/*
+/*
+studentCoordinates.forEach(student => {
+      createMarker(student)
+    })
+
+    const createMarker = function(studentCoordinates){
+    const marker = new google.maps.Marker({position: personCoordinates, map: map});
+      return marker
+    }
+
+   // const studentCoordinates = [Mijnsherenland, Amstelveen, Amsterdam, Weesp, Nijmegen, Hoogeveen, Lelystad, Spijkenisse, Overveen] 
+
+*/
+
+
+
+</script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiWhwHpzGs75Jehfvw2mvPlxGKAD6KGy0&callback=initMap" async
+    defer></script>
+</body>
+
+</html>
